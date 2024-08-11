@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .placeSearch::selection {
+        border-color: #23e5db;
+        outline-color: #23e5db;
+    }
+}
