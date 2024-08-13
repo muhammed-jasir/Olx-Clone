@@ -1,5 +1,5 @@
 import React from 'react'
-import OlxLogo from '../../public/images/olx-logo.png'
+import OlxLogo from '/images/olx-logo.png'
 
 const Signup = () => {
     return (
@@ -9,7 +9,7 @@ const Signup = () => {
                 <div className='flex flex-col items-center w-full'>
                     <img
                         src={OlxLogo}
-                        width='150px'
+                        width='200px'
                         height='200px'
                         alt='olx logo'
                         className=''
@@ -23,7 +23,7 @@ const Signup = () => {
                             id='name'
                             name='name'
                             required
-                            className="w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full border-2 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#002f34]"
                         />
                     </div>
 
@@ -34,7 +34,7 @@ const Signup = () => {
                             id='email'
                             name='email'
                             required
-                            className="w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full border-2 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#002f34]"
                         />
                     </div>
 
@@ -45,7 +45,7 @@ const Signup = () => {
                             id='phone'
                             name='phone'
                             required
-                            className="w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full border-2 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#002f34]"
                         />
                     </div>
 
@@ -67,8 +67,8 @@ const Signup = () => {
                         Signup
                     </button>
 
-                    <p className='text-md font-medium'>
-                        Already have an account? <a href='' className='text-blue-800 hover:underline hover:underline-offset-4'>Login</a>
+                    <p className='text-md font-medium text-center hover:underline hover:underline-offset-4'>
+                        Login
                     </p>
                 </form>
             </div>

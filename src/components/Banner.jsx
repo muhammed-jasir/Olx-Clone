@@ -2,7 +2,7 @@ import React from 'react'
 import Arrow from '../assets/Arrow'
 const Banner = () => {
     return (
-        <div className='pt-20'>
+        <div className='pt-3'>
             <div className=''>
                 <div className='flex py-2 px-4 gap-5 border-2 border-x-0 mb-2 overflow-x-auto whitespace-nowrap scrollbar-hide'>
                     <div className='flex gap-2 font-bold cursor-pointer'>
@@ -21,7 +21,7 @@ const Banner = () => {
                 </div>
                 <div className='relative w-full'>
                     <img 
-                        src='../../public/images/banner copy.png'
+                        src='/images/banner copy.png'
                         alt='banner'
                         className='w-full object-cover h-48 sm:h-64 md:h-80'
                     />

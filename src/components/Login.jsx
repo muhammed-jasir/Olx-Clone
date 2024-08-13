@@ -1,15 +1,15 @@
 import React from 'react'
-import OlxLogo from '../../public/images/olx-logo.png'
+import OlxLogo from '/images/olx-logo.png'
 
 const Login = () => {
     return (
-        <div className='p-6 sm:p-10 flex justify-center border bg-slate-50'>
-            <div className="flex flex-col border p-5 rounded-md bg-white shadow-lg max-w-md w-full">
+        <div className='p-6 sm:p-10 flex justify-center bg-slate-50'>
+            <div className="flex flex-col border border-[#002f34] p-5 rounded-md bg-white shadow-lg max-w-md w-full">
                 <h1 className='text-xl font-semibold text-center'>Login</h1>
                 <div className='flex flex-col items-center w-full'>
                     <img
                         src={OlxLogo}
-                        width='150px'
+                        width='200px'
                         height='200px'
                         alt='olx logo'
                         className=''
@@ -23,7 +23,7 @@ const Login = () => {
                             id='email'
                             name='email'
                             required
-                            className="w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full border-2 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#002f34]"
                         />
                     </div>
 
@@ -34,7 +34,7 @@ const Login = () => {
                             id='password'
                             name='password'
                             required
-                            className="w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full border-2 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#002f34]"
                         />
                     </div>
 
@@ -45,8 +45,8 @@ const Login = () => {
                         Login
                     </button>
 
-                    <p className='text-md font-medium'>
-                        Don't have an account? <a href='' className='text-blue-800 hover:underline hover:underline-offset-4'>Signup</a>
+                    <p className='text-md font-medium text-center hover:underline hover:underline-offset-4'>
+                        Signup
                     </p>
                 </form>
             </div>

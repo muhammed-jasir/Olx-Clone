@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
     return (
         <div className='w-full'>
-            <div className='flex flex-col sm:flex-row justify-between max-sm:text-center items-center bg-slate-100 py-6 px-2 sm:px-10 gap-8 sm:gap-0'>
+            <div className='flex flex-col sm:flex-row justify-between max-sm:text-center items-center bg-gray-100 py-6 px-2 sm:px-10 gap-8 sm:gap-0'>
                 <div className='flex flex-col gap-2'>
                     <div className='text-xl font-bold'>
                         <p>POPULAR LOCATIONS</p>
@@ -45,8 +45,8 @@ const Footer = () => {
                 </div>
             </div>
             <div className='flex flex-col sm:flex-row justify-between items-center p-5 bg-[#002f34] text-white gap-4 sm:gap-0'>
-                <p className='m-0'>Other Countries Pakistan - South Africa - Indonesia</p>
-                <p className='m-0'>Free Classifieds in India. © 2006-2024 OLX</p>
+                <p className='text-center'>Other Countries Pakistan - South Africa - Indonesia</p>
+                <p className='text-center'>Free Classifieds in India. © 2006-2024 OLX</p>
             </div>
         </div>
     )

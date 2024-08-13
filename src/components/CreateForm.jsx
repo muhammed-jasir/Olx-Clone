@@ -8,7 +8,7 @@ const CreateForm = () => {
                     <div className="mb-4">
                         <label htmlFor="name" className="flex text-gray-700 font-bold mb-2">Name</label>
                         <input
-                            className="w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full border-2 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#002f34]"
                             type="text"
                             id="name"
                             name="name"
@@ -16,10 +16,21 @@ const CreateForm = () => {
                         />
                     </div>
 
+                    <div className='mb-4'>
+                        <label htmlFor="description" className="flex text-gray-700 font-bold mb-2">Description</label>
+                        <textarea
+                            className="w-full border-2 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#002f34]"
+                            id="description"
+                            name="description"
+                            rows="5"
+                            placeholder="Describe your product here..."
+                        />
+                    </div>
+
                     <div className="mb-4">
                         <label htmlFor="category" className="flex text-gray-700 font-bold mb-2">Category</label>
                         <input
-                            className="w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full border-2 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#002f34]"
                             type="text"
                             id="category"
                             name="category"
@@ -30,7 +41,7 @@ const CreateForm = () => {
                     <div className="mb-4">
                         <label htmlFor="price" className="flex text-gray-700 font-bold mb-2">Price</label>
                         <input
-                            className="w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full border-2 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#002f34]"
                             type="number"
                             id="price"
                             name="price"
@@ -41,10 +52,10 @@ const CreateForm = () => {
                 <div className="mb-4 flex justify-center">
                     <img
                         alt="Posts"
-                        className="object-cover border rounded-md"
+                        className="object-cover border-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#002f34]"
                         width="200px"
                         height="200px"
-                        src="../../public/images/R15V3.jpg"
+                        src="/images/R15V3.jpg"
                     />
                 </div>
 
@@ -52,7 +63,7 @@ const CreateForm = () => {
                     <div className="mb-4">
                         <input
                             type="file"
-                            className="w-full text-gray-700 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full text-gray-700 p-2 border-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#002f34]"
                         />
                     </div>
 
