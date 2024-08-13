@@ -7,7 +7,7 @@ import SellButtonPlus from '../assets/SellButtonPlus'
 
 const Header = () => {
     return (
-        <header className='py-2.5 px-4 sm:px-8 bg-slate-100 w-screen z-50 fixed '>
+        <header className='py-2.5 px-4 sm:px-8 bg-slate-100 w-full z-50'>
             <div className='w-full flex justify-between items-center'>
                 <div>
                     <OlxLogo />
