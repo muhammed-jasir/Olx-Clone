@@ -1,4 +1,5 @@
 import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Create from './pages/Create'
 import LoginPage from './pages/Login'
@@ -7,9 +8,14 @@ import ViewPost from './pages/ViewPost'
 
 const App = () => {
   return (
-    <div>
-        <Home />
-    </div>
+    <BrowserRouter>
+        <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/signup' element={<SignupPage />} />
+            <Route path='/login' element={<LoginPage />} />
+            <Route path='/create-post' element={<Create />} />
+        </Routes>
+    </BrowserRouter>
   )
 }
 
