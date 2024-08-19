@@ -1,7 +1,54 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import OlxLogo from '/images/olx-logo.png'
+import { Link, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import { FirebaseContext } from '../store/firebaseContext';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+
 
 const Login = () => {
+    const [formData, setFormData] = useState({
+        email: '',
+        password: ''
+    })
+    const [loading, setLoading] = useState(false);
+
+    const { auth } = useContext(FirebaseContext);
+    const navigate = useNavigate();
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.id]: e.target.value });
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        if (!formData.email) {
+            return toast.error("Email is required");
+        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+            return toast.error("Email is invalid");
+        }
+
+        if (!formData.password) {
+            return toast.error("Password is required");
+        }
+
+        setLoading(true);
+
+        try {
+            await signInWithEmailAndPassword(auth, formData.email, formData.password);
+
+            toast.success('Login successfull');
+
+            navigate('/');
+        } catch (error) {
+            toast.error(error.message);
+        } finally {
+            setLoading(false);
+        }
+
+    }
+
     return (
         <div className='p-6 sm:p-10 flex justify-center bg-slate-50'>
             <div className="flex flex-col border border-[#002f34] p-5 rounded-md bg-white shadow-lg max-w-md w-full">
@@ -15,7 +62,7 @@ const Login = () => {
                         className=''
                     />
                 </div>
-                <form className='flex flex-col w-full'>
+                <form className='flex flex-col w-full' onSubmit={handleSubmit}>
                     <div className="mb-4">
                         <label htmlFor='email' className="flex text-gray-700 font-bold mb-2">Email</label>
                         <input
@@ -24,6 +71,8 @@ const Login = () => {
                             name='email'
                             required
                             className="w-full border-2 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#002f34]"
+                            value={formData.email}
+                            onChange={handleChange}
                         />
                     </div>
 
@@ -35,19 +84,23 @@ const Login = () => {
                             name='password'
                             required
                             className="w-full border-2 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#002f34]"
+                            value={formData.password}
+                            onChange={handleChange}
                         />
                     </div>
 
-                    <button 
+                    <button
                         type='submit'
                         className="mt-5 mb-4 w-full h-10 bg-[#002f34] text-white font-bold hover:bg-slate-50 hover:text-[#002f34] border-2 border-[#002f34] rounded-md transition duration-200"
                     >
-                        Login
+                        {loading ? 'Loading....' : 'Login'}
                     </button>
 
-                    <p className='text-md font-medium text-center hover:underline hover:underline-offset-4'>
-                        Signup
-                    </p>
+                    <Link to='/signup'>
+                        <p className='text-md font-medium text-center hover:underline hover:underline-offset-4'>
+                            Signup
+                        </p>
+                    </Link>
                 </form>
             </div>
         </div>

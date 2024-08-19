@@ -13,6 +13,7 @@ const Signup = () => {
         phone: '',
         password: '',
     });
+    const [loading, setLoading] = useState(false);
     const { auth, db } = useContext(FirebaseContext);
     const navigate = useNavigate();
 
@@ -43,6 +44,8 @@ const Signup = () => {
             return toast.error("Password is required");
         }
 
+        setLoading(true);
+
         try {
             const userCredential = await createUserWithEmailAndPassword(auth, formData.email, formData.password);
             await updateProfile(userCredential.user, { displayName: formData.name });
@@ -59,6 +62,8 @@ const Signup = () => {
             navigate('/login');
         } catch (error) {
             toast.error(error.message);
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -129,7 +134,7 @@ const Signup = () => {
                         type='submit'
                         className="mt-5 mb-4 w-full h-10 bg-[#002f34] text-white font-bold hover:bg-slate-50 hover:text-[#002f34] border-2 border-[#002f34] rounded-md transition duration-200"
                     >
-                        Signup
+                        {loading ? 'Loading...' : 'Signup'}
                     </button>
 
                     <Link to='/login'>
