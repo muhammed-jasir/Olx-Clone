@@ -98,7 +98,7 @@ const CreateForm = () => {
                 price: formData.price,
                 image: imageUrl,
                 userId: user.uid,
-                createdAt: new Date().toLocaleString(),
+                createdAt: new Date().toLocaleDateString(),
             })
 
             setFormData({

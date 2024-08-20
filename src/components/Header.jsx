@@ -25,7 +25,9 @@ const Header = () => {
         <header className='py-2.5 px-4 sm:px-8 bg-slate-100 w-full z-50'>
             <div className='w-full flex justify-between items-center'>
                 <div>
-                    <OlxLogo />
+                    <Link to='/'>
+                        <OlxLogo />
+                    </Link>
                 </div>
                 <div className='hidden md:flex items-center px-2 max-w-sm lg:w-[250px] h-12 bg-white rounded border-[2px] border-[#002f34] placeSearch'>
                     <Search />
@@ -72,11 +74,13 @@ const Header = () => {
                     }
                 </div>
                 <div className='relative cursor-pointer'>
+                    <Link to='/create-post'>
                     <SellButton />
-                    <div className='absolute flex gap-1 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[14px] font-bold leading-none text-[#002f34]'>
-                        <SellButtonPlus />
-                        <span>SELL</span>
-                    </div>
+                        <div className='absolute flex gap-1 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[14px] font-bold leading-none text-[#002f34]'>
+                            <SellButtonPlus />
+                            <span>SELL</span>
+                        </div>
+                    </Link>
                 </div>
             </div>
         </header>
