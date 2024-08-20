@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { FirebaseContext } from '../store/firebaseContext';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import OAuth from './OAuth';
 
 
 const Login = () => {
@@ -91,10 +92,12 @@ const Login = () => {
 
                     <button
                         type='submit'
-                        className="mt-5 mb-4 w-full h-10 bg-[#002f34] text-white font-bold hover:bg-slate-50 hover:text-[#002f34] border-2 border-[#002f34] rounded-md transition duration-200"
+                        className="mt-5 mb-4 w-full text-lg h-10 bg-[#002f34] text-white font-bold hover:bg-slate-50 hover:text-[#002f34] border-2 border-[#002f34] rounded-md transition duration-200"
                     >
                         {loading ? 'Loading....' : 'Login'}
                     </button>
+
+                    <OAuth />
 
                     <Link to='/signup'>
                         <p className='text-md font-medium text-center hover:underline hover:underline-offset-4'>

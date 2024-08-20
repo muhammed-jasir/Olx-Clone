@@ -5,6 +5,7 @@ import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { toast } from 'react-toastify';
 import { collection, addDoc } from "firebase/firestore";
 import { Link, useNavigate } from 'react-router-dom/dist';
+import OAuth from './OAuth';
 
 const Signup = () => {
     const [formData, setFormData] = useState({
@@ -132,10 +133,12 @@ const Signup = () => {
 
                     <button
                         type='submit'
-                        className="mt-5 mb-4 w-full h-10 bg-[#002f34] text-white font-bold hover:bg-slate-50 hover:text-[#002f34] border-2 border-[#002f34] rounded-md transition duration-200"
+                        className="mt-5 mb-4 w-full h-10 text-lg bg-[#002f34] text-white font-bold hover:bg-slate-50 hover:text-[#002f34] border-2 border-[#002f34] rounded-md transition duration-200"
                     >
                         {loading ? 'Loading...' : 'Signup'}
                     </button>
+
+                    <OAuth />
 
                     <Link to='/login'>
                         <p className='text-md font-medium text-center hover:underline hover:underline-offset-4'>
