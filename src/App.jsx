@@ -6,6 +6,7 @@ import LoginPage from './pages/Login'
 import SignupPage from './pages/Signup'
 import ViewPost from './pages/ViewPost'
 import ScrollToTop from './components/ScrollToTop'
+import ForgotPassword from './components/ForgotPassword'
 
 const App = () => {
     return (
@@ -15,6 +16,7 @@ const App = () => {
                 <Route path='/' element={<Home />} />
                 <Route path='/signup' element={<SignupPage />} />
                 <Route path='/login' element={<LoginPage />} />
+                <Route path='/forgot-password' element={<ForgotPassword />} />
                 <Route path='/create-post' element={<Create />} />
             </Routes>
         </BrowserRouter>

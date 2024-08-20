@@ -133,6 +133,7 @@ const Signup = () => {
 
                     <button
                         type='submit'
+                        disabled={loading}
                         className="mt-5 mb-4 w-full h-10 text-lg bg-[#002f34] text-white font-bold hover:bg-slate-50 hover:text-[#002f34] border-2 border-[#002f34] rounded-md transition duration-200"
                     >
                         {loading ? 'Loading...' : 'Signup'}
