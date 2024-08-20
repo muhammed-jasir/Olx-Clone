@@ -33,9 +33,6 @@ const ForgotPassword = () => {
             setLoading(false);
         }
 
-
-
-
     }
 
     return (
