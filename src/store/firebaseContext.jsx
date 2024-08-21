@@ -6,6 +6,7 @@ export const FirebaseContext = createContext(null);
 
 export const FirebaseProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
