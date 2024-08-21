@@ -29,12 +29,12 @@ const Header = () => {
                         <OlxLogo />
                     </Link>
                 </div>
-                <div className='hidden md:flex items-center px-2 max-w-sm lg:w-[250px] h-12 bg-white rounded border-[2px] border-[#002f34] placeSearch'>
+                <div className='hidden md:flex items-center px-2 max-w-xs lg:w-[250px] h-12 bg-white rounded border-[2px] border-[#002f34] placeSearch'>
                     <Search />
                     <input type="text" className='pl-3 border-transparent outline-none' />
                     <Arrow />
                 </div>
-                <div className="hidden md:flex item-center justify-between h-12 border-[2px] max-w-lg lg:w-[620px] border-[#002f34] rounded bg-slate-50">
+                <div className="hidden md:flex item-center justify-between h-12 border-[2px] max-w-md lg:w-[620px] border-[#002f34] rounded bg-slate-50">
                     <div className="w-full h-full flex">
                         <input
                             type='text'
