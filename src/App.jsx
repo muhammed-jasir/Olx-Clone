@@ -8,6 +8,7 @@ import ViewPost from './pages/ViewPost'
 import ScrollToTop from './components/ScrollToTop'
 import ForgotPassword from './components/ForgotPassword'
 import { PostProvider } from './store/postContext'
+import ProtectedRoute from './components/ProtectedRoute'
 
 const App = () => {
     return (
@@ -19,9 +20,15 @@ const App = () => {
                     <Route path='/signup' element={<SignupPage />} />
                     <Route path='/login' element={<LoginPage />} />
                     <Route path='/forgot-password' element={<ForgotPassword />} />
-                    <Route path='/create-post' element={<Create />} />
+                    <Route path='/create-post'
+                        element={
+                            <ProtectedRoute>
+                                <Create />
+                            </ProtectedRoute>
+                        }
+                    />
                     <Route path='/view-post/:postId' element={<ViewPost />} />
-                    </Routes>
+                </Routes>
             </BrowserRouter>
         </PostProvider>
     )
